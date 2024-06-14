@@ -42,7 +42,7 @@ Este projeto é uma aplicação de gestão de projetos que permite aos usuários
 
    ```bash
    git clone https://github.com/seu_usuario/seu_projeto.git
-   cd backend/
+   cd backend/management-system/
    
 2. **Instale as dependências do Laravel:**
 
@@ -79,7 +79,7 @@ Este projeto é uma aplicação de gestão de projetos que permite aos usuários
 1. **Navegue até a pasta do frontend:**
 
    ```bash
-   cd ../frontend/
+   cd frontend/management-system/
    
 2. **Instale as dependências do Vue.js:**
 
