@@ -1,9 +1,5 @@
 # Cloud++ Global Project Management System
 
-![Logo do Projeto](link_para_o_logo.png)
-
-Um sistema de gestão de projetos desenvolvido com Laravel no backend e Vue.js no frontend.
-
 ## Introdução
 
 Este projeto é uma aplicação de gestão de projetos que permite aos usuários criar, visualizar, atualizar e deletar projetos e tarefas associadas. Foi desenvolvido como parte de um teste técnico para demonstrar habilidades em desenvolvimento full-stack.
