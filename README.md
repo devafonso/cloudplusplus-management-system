@@ -93,6 +93,12 @@ Este projeto é uma aplicação de gestão de projetos que permite aos usuários
    
 4. **Acesse o frontend em http://localhost:3000.**
 
+## Vídeo de Usabilidade
+
+Para uma visão mais detalhada da usabilidade da aplicação, confira o vídeo abaixo:
+
+[![Vídeo de Usabilidade]([https://img.youtube.com/vi/ID_DO_VIDEO/maxresdefault.jpg)](https://www.youtube.com/watch?v=ID_DO_VIDEO](https://www.youtube.com/watch?v=VVNmRT9zTZo))
+
 
 
 
