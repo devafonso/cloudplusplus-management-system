@@ -93,6 +93,19 @@ Este projeto é uma aplicação de gestão de projetos que permite aos usuários
    
 4. **Acesse o frontend em http://localhost:3000.**
 
+## Rotas da API
+
+| Categoria    | Método | Rota                         | Descrição                                   |
+|--------------|--------|------------------------------|---------------------------------------------|
+| Autenticação | POST   | /api/login                   | Login do usuário                            |
+|              | POST   | /api/logout                  | Logout do usuário (necessário token)        |
+| Projetos     | GET    | /api/projects                | Lista todos os projetos                     |
+|              | GET    | /api/projects/{id}           | Mostra os detalhes de um projeto específico |
+|              | POST   | /api/projects                | Cria um novo projeto                        |
+|              | PUT    | /api/projects/{id}           | Atualiza um projeto existente               |
+|              | DELETE | /api/projects/{id}           | Deleta um projeto                           |
+
+
 ## Vídeo de Usabilidade
 
 Para uma visão mais detalhada da usabilidade da aplicação, confira o vídeo abaixo:
