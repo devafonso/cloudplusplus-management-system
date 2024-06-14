@@ -75,6 +75,26 @@ Este projeto é uma aplicação de gestão de projetos que permite aos usuários
    ```bash
   php artisan serve --port=8000
 
+### Frontend (Vue.js)
+
+1. **Navegue até a pasta do frontend:**
+
+   ```bash
+   cd ../frontend/
+   
+2. **Instale as dependências do Vue.js:**
+
+   ```bash
+   npm install
+   
+3. **Inicie o servidor de desenvolvimento do frontend:**
+
+   ```bash
+   npm run serve
+   
+4. **Acesse o frontend em http://localhost:3000.**
+
+
 
 
 
