@@ -27,4 +27,20 @@ Este projeto é uma aplicação de gestão de projetos que permite aos usuários
 - **Laravel Sanctum:** Pacote oficial do Laravel para autenticação via tokens.
 - **MySQL:** Banco de dados relacional utilizado para armazenamento dos dados.
 
-## Estrutura do Projeto
+
+## Instalação e Configuração
+
+### Pré-requisitos
+
+- Node.js
+- Composer
+- PHP
+- MySQL
+
+### Backend (Laravel)
+
+1. **Clone o repositório e navegue até a pasta do backend:**
+
+   ```bash
+   git clone https://github.com/seu_usuario/seu_projeto.git
+   cd backend/
