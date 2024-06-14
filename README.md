@@ -6,16 +6,15 @@ Este projeto é uma aplicação de gestão de projetos que permite aos usuários
 
 ## Funcionalidades
 
-- Registro e autenticação de usuários
+- Autenticação de usuários
 - Criação, visualização, atualização e exclusão de projetos
-- Criação, visualização, atualização e exclusão de tarefas associadas a projetos
 - Interface amigável e responsiva
 
 ## Tecnologias Utilizadas
 
 ### Frontend
 
-- **Vue.js:** Framework JavaScript progressivo para construção de interfaces de usuário.
+- **Vue.js:** Framework JavaScript para construção de interfaces de usuário.
 - **Vue Router:** Roteamento para aplicativos Vue.js.
 - **Pinia:** Gerenciamento de estado para Vue.js.
 - **Axios:** Cliente HTTP baseado em Promises para fazer requisições para a API.
@@ -23,7 +22,7 @@ Este projeto é uma aplicação de gestão de projetos que permite aos usuários
 
 ### Backend
 
-- **Laravel:** Framework PHP poderoso e elegante para desenvolvimento de aplicações web.
+- **Laravel:** Framework PHP para desenvolvimento de aplicações web.
 - **Laravel Sanctum:** Pacote oficial do Laravel para autenticação via tokens.
 - **MySQL:** Banco de dados relacional utilizado para armazenamento dos dados.
 
