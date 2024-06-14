@@ -13,7 +13,9 @@ class ProjectController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $projects = Project::where('creator_id', $user->id)->paginate(15);
+        $projects = Project::where('creator_id', $user->id)
+                            ->orderBy('created_at', 'desc')
+                            ->paginate(15);
         return response()->json($projects);
     }
 
@@ -40,24 +42,22 @@ class ProjectController extends Controller
 
         return response()->json("Project Created!");
     }
-    
+
     public function update(Request $request, $id)
     {
-        
+
         $project = Project::findOrFail($id);
-    
-        
+
         $project->name = $request->name;
         $project->start_date = $request->start_date;
         $project->end_date = $request->end_date;
         $project->value = $request->value;
         $project->status = $request->status;
-        $project->creator_id = $request->creator_id;
-    
-        
+        $project->creator_id = Auth::id();
+
         $project->save();
-    
-        
+
+
         return response()->json([
             'message' => 'Project updated successfully',
             'code' => 200,
@@ -66,7 +66,7 @@ class ProjectController extends Controller
     public function destroy($id)
     {
         $project = Project::find($id);
-        if($project) {
+        if ($project) {
             $project->delete();
             return response()->json([
                 'message' => 'Project Deleted Successfully',

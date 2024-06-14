@@ -1,17 +1,32 @@
 <script>
 import axios from "axios";
 import { PhCaretRight } from "@phosphor-icons/vue";
+import {VMoney} from 'v-money'
+import { useAuthStore } from "../stores/auth";
+import Swal from "sweetalert2";
 
 export default {
   name: "ProjectCreate",
+  directives: {
+    money: VMoney
+  },
   data() {
     return {
+      authStore: useAuthStore(),
       project: {
         name: "",
         start_date: "",
         end_date: "",
         value: "",
         status: "",
+      },
+      money: {
+        decimal: '.',
+        thousands: ',',
+        prefix: '$ ',
+        suffix: '',
+        precision: 2,
+        masked: false
       },
       errors: {},
     };
@@ -24,7 +39,7 @@ export default {
       formData.append("end_date", this.project.end_date);
       formData.append("value", this.project.value);
       formData.append("status", this.project.status);
-      formData.append("creator_id", 1);
+      formData.append("creator_id", this.authStore.user.id);
 
       try {
         const response = await axios.post("api/projects", formData);
@@ -35,7 +50,8 @@ export default {
           this.project.value = "";
           this.project.status = "";
           this.errors = {};
-          alert("Project created successfully!");
+          this.$router.push("/home");
+          
         }
       } catch (error) {
         console.error("API Error:", error);
@@ -47,13 +63,20 @@ export default {
       }
     },
   },
+  mounted() {
+    this.authStore.getUser();
+  },
 };
 </script>
 
 <template>
   <div class="container full-height mt-5">
     <p class="text-muted fw-semibold">
-      Project<span class="p-2"><PhCaretRight :size="15" /></span
+      <router-link
+        class="text-muted fw-semibold text-decoration-none"
+        :to="{ name: 'Home' }"
+        >Projects</router-link
+      ><span class="p-2"><PhCaretRight :size="15" /></span
       ><span>Create</span>
     </p>
     <p class="fs-3 fw-bold">Create Project</p>
@@ -98,6 +121,7 @@ export default {
             class="form-control"
             id="value"
             v-model="project.value"
+            v-money="money"
           />
           <span v-if="errors.value" class="text-danger">{{ errors.value[0] }}</span>
         </div>
@@ -108,7 +132,7 @@ export default {
             id="status"
             v-model="project.status"
           >
-            <option value="" selected disabled>Open this select menu</option>
+            
             <option value="active">Active</option>
             <option value="inactive">Inactive</option>
           </select>

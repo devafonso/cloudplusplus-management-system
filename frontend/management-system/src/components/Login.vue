@@ -15,7 +15,7 @@ const form = ref({
   >
     <div class="card" style="width: 30rem">
       <div class="card-body p-5">
-        <h4 class="text-center fst-italic">Management System</h4>
+        <h4 class="text-center fst-italic"> Management System</h4>
         <h4 class="text-center mt-4">Sign in</h4>
         <form @submit.prevent="authStore.handleLogin(form)" class="mt-4">
           <div class="mb-3">
@@ -54,10 +54,7 @@ const form = ref({
 
           <button type="submit" class="btn btn-primary w-100 mt-3">
             Sign in
-          </button>
-          <p class="text-center mt-3 text-muted">
-            Don't have an account? <span class="text-primary">Sign Up now</span>
-          </p>
+          </button>          
         </form>
       </div>
     </div>

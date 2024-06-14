@@ -5,9 +5,11 @@ import axios from "axios";
 export const useAuthStore = defineStore("auth", {
   state: () => ({
     authUser: null,
+    isAuthenticated: false,
     authErros: [],
   }),
   getters: {
+    isAuthenticated: (state) => !!state.authUser,
     user: (state) => state.authUser,
     errors: (state) => state.authErros,
   },
@@ -28,7 +30,8 @@ export const useAuthStore = defineStore("auth", {
           email: data.email,
           password: data.password,
         });
-        this.router.push("/");
+        await this.getUser();
+        this.router.push("/home");
       } catch (error) {
         if (error.response.status === 422) {
           this.authErros = error.response.data.errors;
@@ -37,16 +40,7 @@ export const useAuthStore = defineStore("auth", {
 
       
     },
-    async handleRegister(data) {
-      await this.getToken();
-      await axios.post("/register", {
-        name: data.name,
-        email: data.email,
-        password: data.password,
-        password_confirmation: data.password_confirmation,
-      });
-      this.router.push("/");
-    },
+    
     async handleLogout() {
       await axios.post("/logout");
       this.authUser = null;

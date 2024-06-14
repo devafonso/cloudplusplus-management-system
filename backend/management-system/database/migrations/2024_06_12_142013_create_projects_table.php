@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
-            $table->float('value');
+            $table->decimal('value', 10, 2);
             $table->enum('status', ['active', 'inactive']);
             $table->foreignId('creator_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();

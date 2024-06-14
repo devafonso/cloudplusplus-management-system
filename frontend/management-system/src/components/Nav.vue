@@ -18,21 +18,26 @@ export default {
 <template>
   <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
     <div class="container-fluid">
-      <router-link class="fst-italic fs-5 fw-bold text-dark" :to="{ name: 'Home' }">Management System</router-link>
+      <router-link
+        class="fst-italic fs-3 fw-bold text-dark text-decoration-none"
+        :to="{ name: 'Home' }"
+        >Cloud++</router-link
+      >
+
       <template v-if="!authStore.user">
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-          <span class="navbar-text"> Login</span>
+          <span class="navbar-text">Login</span>
         </div>
       </template>
+
       <template v-else>
-        
-        <button class="btn btn-light" @click="authStore.handleLogout()">Logout</button>
+        <button class="btn btn-light" @click="authStore.handleLogout()">
+          Logout
+        </button>
       </template>
     </div>
   </nav>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

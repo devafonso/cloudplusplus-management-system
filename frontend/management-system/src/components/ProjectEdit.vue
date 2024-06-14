@@ -2,9 +2,13 @@
 import axios from "axios";
 import { PhCaretRight } from "@phosphor-icons/vue";
 import { useRouter } from "vue-router";
+import { VMoney } from "v-money";
 
 export default {
   name: "ProjectEdit",
+  directives: {
+    money: VMoney,
+  },
   data() {
     return {
       project: {
@@ -13,7 +17,14 @@ export default {
         end_date: "",
         value: "",
         status: "",
-        creator_id: 1 
+      },
+      money: {
+        decimal: ".",
+        thousands: ",",
+        prefix: "$ ",
+        suffix: "",
+        precision: 2,
+        masked: false,
       },
       error: [],
     };
@@ -39,8 +50,7 @@ export default {
           `api/projects/${this.$route.params.id}`,
           data
         );
-        this.$router.push("/");
-       
+        this.$router.push("/home");
       } catch (error) {
         console.error(error);
       }
@@ -52,7 +62,12 @@ export default {
 <template>
   <div class="container full-height mt-5">
     <p class="text-muted fw-semibold">
-      Project<span class="p-2"><PhCaretRight :size="15" /></span><span>Edit</span>
+      <router-link
+        class="text-muted fw-semibold text-decoration-none"
+        :to="{ name: 'Home' }"
+        >Projects</router-link
+      ><span class="p-2"><PhCaretRight :size="15" /></span
+      ><span>Edit</span>
     </p>
     <p class="fs-3 fw-bold">Edit Project</p>
     <form @submit.prevent="updateProject" class="row g-3">
@@ -93,15 +108,12 @@ export default {
             class="form-control"
             id="value"
             v-model="project.value"
+            v-money="money"
           />
         </div>
         <div class="mb-3">
           <label for="status" class="form-label">Status</label>
-          <select
-            class="form-select"
-            id="status"
-            v-model="project.status"
-          >
+          <select class="form-select" id="status" v-model="project.status">
             <option value="active">Active</option>
             <option value="inactive">Inactive</option>
           </select>

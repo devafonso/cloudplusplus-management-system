@@ -4,6 +4,7 @@ import { format, parseISO } from "date-fns";
 import Swal from "sweetalert2";
 import { PhTrash, PhNotePencil } from "@phosphor-icons/vue";
 
+
 export default {
   name: "ProjectList",
   data() {
@@ -58,14 +59,20 @@ export default {
         const result = await Swal.fire({
           title: "Are you sure?",
           showCancelButton: true,
-          confirmButtonText: "Delete",
+          confirmButtonText: "Confirm",
+          icon: 'warning',
+          customClass: {
+            confirmButton: "btn btn-danger m-2",
+            cancelButton: "btn btn-light m-2", 
+          },
+          buttonsStyling: false,
         });
 
         if (result.isConfirmed) {
           const response = await axios.delete(`api/projects/${id}`);
           if (response.status === 200) {
             this.showSuccessAlert(response.data.message);
-            this.fetchProjects(this.currentPage); // Refresh current page
+            this.fetchProjects(this.currentPage);
           } else {
             this.showErrorAlert("Failed to delete project");
           }
@@ -135,7 +142,6 @@ export default {
                 :size="20"
                 color="#dc2e2e"
               />
-              
             </td>
           </tr>
         </tbody>
