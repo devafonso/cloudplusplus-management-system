@@ -44,3 +44,41 @@ Este projeto é uma aplicação de gestão de projetos que permite aos usuários
    ```bash
    git clone https://github.com/seu_usuario/seu_projeto.git
    cd backend/
+   
+2. **Instale as dependências do Laravel:**
+
+   ```bash
+   composer install
+   
+3. **Copie o arquivo de configuração do ambiente:**
+
+   ```bash
+   cp .env.example .env
+   
+4. **Configure o arquivo .env com as configurações do banco de dados:**
+
+   ```bash
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=nome_do_seu_banco
+   DB_USERNAME=seu_usuario
+   DB_PASSWORD=sua_senha
+   
+5. **Execute as migrações e as seeds para preparar o banco de dados:**
+
+   ```bash
+   php artisan migrate --seed
+
+6. **Inicie o servidor backend:**
+
+   ```bash
+  php artisan serve --port=8000
+
+
+
+
+
+   
+   
+
