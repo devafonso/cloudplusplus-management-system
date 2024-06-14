@@ -41,7 +41,7 @@ Este projeto é uma aplicação de gestão de projetos que permite aos usuários
 1. **Clone o repositório e navegue até a pasta do backend:**
 
    ```bash
-   git clone https://github.com/seu_usuario/seu_projeto.git
+   git clone https://github.com/devafonso/cloudplusplus-management-system.git
    cd backend/management-system/
    
 2. **Instale as dependências do Laravel:**
