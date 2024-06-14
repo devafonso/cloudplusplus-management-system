@@ -73,7 +73,7 @@ Este projeto é uma aplicação de gestão de projetos que permite aos usuários
 6. **Inicie o servidor backend:**
 
    ```bash
-  php artisan serve --port=8000
+   php artisan serve --port=8000
 
 ### Frontend (Vue.js)
 
