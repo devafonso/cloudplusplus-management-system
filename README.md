@@ -2,7 +2,7 @@
 
 ## Introdução
 
-Este projeto é uma aplicação de gestão de projetos que permite aos usuários criar, visualizar, atualizar e deletar projetos e tarefas associadas. Foi desenvolvido como parte de um teste técnico para demonstrar habilidades em desenvolvimento full-stack.
+Este projeto é uma aplicação de gestão de projetos que permite aos usuários criar, visualizar, atualizar e deletar projetos. Foi desenvolvido como parte de um teste técnico para demonstrar habilidades em desenvolvimento full-stack.
 
 ## Funcionalidades
 
