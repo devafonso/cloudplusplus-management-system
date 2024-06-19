@@ -92,6 +92,11 @@ Este projeto é uma aplicação de gestão de projetos que permite aos usuários
    npm run serve
    
 4. **Acesse o frontend em http://localhost:3000.**
+   
+5. **Login e senha do Usuário Teste:**
+   - Email: test@example.com
+   - Senha: password
+   
 
 ## Rotas da API
 
